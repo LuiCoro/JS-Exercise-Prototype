@@ -74,10 +74,17 @@ Person.prototype.toString = function () {
         + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
 */
 
-function Car() {
-
+function Car(model, milesPerGallon) {
+  this.model = model;
+  this.milesPerGallon = milesPerGallon;
+  this.tank = 0;
+  this.odometer = 0;
 }
-
+Car.prototype.fill = function (gallons) {
+  this.tank += gallons;
+}
+// REMEMBER TO ADD FUNCTION!!!!!!!!!!!!!!!!!!!!!!
+// READ THE TASK CARFULLY TO AVOID SPENDING TIME LOOKING FOR SPELLING
 
 /*
   TASK 3
@@ -86,9 +93,19 @@ function Car() {
     - Besides the methods on Person.prototype, babies have the ability to `.play()`:
         + Should return a string "Playing with x", x being the favorite toy.
 */
-function Baby() {
-
+function Baby(name, age, favoriteToy) {
+  this.name = name;
+  this.age = age;
+  this.favoriteToy = favoriteToy;
 }
+Baby.prototype = Object.create(Person.prototype);
+Baby.prototype.play = function () {
+  return `playing with ${this.favoriteToy}`;
+}
+// Source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create
+// SEE LINE 8 FO RAN EXAMPLE ASK QUESTIONS WHY IT GOES THERE!!!!!!!!!!!!!!
+
+// ASK KYLE HOW TO READ MDN better!!!!!!
 
 
 /* 
