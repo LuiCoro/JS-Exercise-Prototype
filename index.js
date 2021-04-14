@@ -43,7 +43,7 @@ function Person(name, age) {
   this.name = name;
   this.age = age;
   this.stomach = [];
-};
+}
 Person.prototype.eat = function (someFood) {
   if (this.stomach.length < 10) {
     this.stomach.push(someFood);
@@ -111,10 +111,10 @@ Baby.prototype.play = function () {
 /* 
   TASK 4
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
+  1. Window Binding: got to define .this or else its either window or global object
+  2. Apply: immediatley involkes a function and pass in obj in the array
+  3. Bind: dose not involke a function right away
+  4. calll: pass in arguments 1 by 1 
 */
 
 
